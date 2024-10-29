@@ -1,0 +1,216 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background-image: url(BirthdayBackground.jpg);
+    background-position: center center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    /* backdrop-filter: brightness(0.7); */
+    position: relative;
+}
+
+.top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    font-size: 30px;
+    font-weight: 900;
+    color: crimson;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-box1, .img-box2{
+    /* border: 1px solid black; */
+    height: 70vh;
+    width: 25vw;
+    margin: 50px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.gift-box{
+    /* border: 1px solid black; */
+    height: 70vh;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-box2 .image img{
+    width: 25vw;
+    height: 32vh;
+    object-fit: contain;
+    rotate: 18deg;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+}
+
+.img-box1 .image img{
+    width: 25vw;
+    height: 32vh;
+    object-fit: contain;
+    rotate: -10deg;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+}
+
+.content{
+    width: 100%;
+    /* background-color: white; */
+    /* background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(171,37,200,1) 0%, rgba(0,212,255,1) 100%); */
+    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+    font-size: 20px;
+    display: none;
+    text-align: center;
+}
+
+#btn{
+    margin: 10px;
+    padding: 10px;
+    color: crimson;
+    background-color: gainsboro;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 700; 
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#btn:hover {
+    transform: scale(1.1); 
+    background-color: lightcoral; 
+    color: white; 
+}
+
+#btn:active {
+    transform: scale(0.9);
+}
+
+.hidden{
+    display: none;
+}
+
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#loadingScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#startButton {
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background-color: crimson;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* General styles for mobile devices */
+@media (max-width: 768px) {
+    body {
+        background-image: url(BirthdayBackground.jpg);
+        background-size: cover;
+    }
+
+    .img-box1, .img-box2, .gift-box {
+        width: 90vw; /* Make boxes wider on smaller screens */
+        height: auto; /* Adjust height for content */
+        margin: 20px; /* Reduce margin */
+    }
+
+    .img-box1 .image img,
+    .img-box2 .image img {
+        width: 100%; /* Make images full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    h1 {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+
+    #btn {
+        width: 80%; /* Button width for smaller screens */
+        font-size: 18px; /* Larger font size for better readability */
+    }
+
+    #loadingScreen {
+        flex-direction: column; /* Stack button vertically */
+    }
+
+    #startButton {
+        font-size: 24px; /* Increase button font size */
+    }
+
+    .content{
+        width: 100%;
+        background-color: white;
+        font-size: 12px;
+        display: none;
+        text-align: center;
+    }
+}
+
+/* Styles for very small screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px; /* Even smaller font size */
+    }
+
+    #btn {
+        padding: 15px; /* Increase padding for touch targets */
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .content{
+        width: 100%;
+        background-color: white;
+        font-size: 12px;
+        display: none;
+        text-align: center;
+    }
+
+    .img-box1, .img-box2{
+        width: 22vw; /* Make boxes wider on smaller screens */
+        height: auto; /* Adjust height for content */
+        margin: 20px; /* Reduce margin */
+    }
+
+    .gift-box{
+        width: 50vw;
+        height: auto;
+    }
+}
